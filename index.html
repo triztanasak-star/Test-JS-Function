@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container w-50 py-5">
+        <div class="card p-4 shadow rounded bg-light">
+            <h2 class="text-center mb-4 text-danger fw-bold">Bài 1: Tính Tiền Lương</h2>
+
+            <div class="mb-3">
+                <label for="soNgayLam" class="form-label fw-bold">Số ngày làm việc</label>
+                <input id="soNgayLam" type="number" class="form-control"  placeholder="Nhập số ngày làm...">
+            </div>
+
+            <div class="d-grid mb-4">
+               <button id="btnTinhLuong" class="btn btn-primary fw-bold" type="button" >TÍNH TIỀN LƯƠNG</button>
+            </div>
+
+            <table class="table table-bordered text-center fs-5">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Thông tin</th>
+                        <th>Số tiền (VNĐ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-success fw-bold text-success">
+                        <td>Tổng tiền lương</td>
+                        <td id="txtTongLuong">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <div class="container w-50 py-5">
+    <div class="card p-4 shadow rounded bg-light">
+        <h2 class="text-center mb-4 text-danger fw-bold">Bài 2: Tính Giá Trị Trung Bình</h2>
+
+        <div class="row g-3 mb-4">
+            <div class="col-md-4">
+                <label for="num1" class="form-label fw-bold">Số thứ 1</label>
+                <input id="num1" type="number" step="any" class="form-control"  placeholder="Nhập số...">
+            </div>
+            <div class="col-md-4">
+                <label for="num2" class="form-label fw-bold">Số thứ 2</label>
+                <input id="num2" type="number" step="any" class="form-control"  placeholder="Nhập số...">
+            </div>
+            <div class="col-md-4">
+                <label for="num3" class="form-label fw-bold">Số thứ 3</label>
+                <input id="num3"type="number" step="any" class="form-control"  placeholder="Nhập số...">
+            </div>
+            <div class="col-md-6">
+                <label for="num4" class="form-label fw-bold">Số thứ 4</label>
+                <input  id="num4"type="number" step="any" class="form-control"  placeholder="Nhập số...">
+            </div>
+            <div class="col-md-6">
+                <label for="num5" class="form-label fw-bold">Số thứ 5</label>
+                <input  id="num5" type="number" step="any" class="form-control"  placeholder="Nhập số...">
+            </div>
+        </div>
+
+        <div class="d-grid mb-4">
+            <button  id="btnTinhTrungBinh" class="btn btn-warning text-white fw-bold" type="button">
+                TÍNH GIÁ TRỊ TRUNG BÌNH
+            </button>
+        </div>
+
+        <table class="table table-bordered text-center fs-5">
+            <thead class="table-warning">
+                <tr>
+                    <th>Thông tin</th>
+                    <th>Kết quả</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-success fw-bold text-success">
+                    <td>Giá trị trung bình</td>
+                    <td id="txtTrungBinh">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="container w-50 py-5">
+    <div class="card p-4 shadow rounded bg-light">
+        <h2 class="text-center mb-4 text-danger fw-bold">Bài 3: Quy Đổi Tiền USD</h2>
+
+        <p class="text-center text-muted fw-semibold">Tỷ giá hiện tại: 1 USD = 23,500 VNĐ</p>
+
+        <div class="mb-3">
+            <label for="soTienUSD" class="form-label fw-bold">Số tiền USD muốn đổi</label>
+            <input id="soTienUSD" type="number" class="form-control"  placeholder="Nhập số tiền USD... (Ví dụ: 2)">
+        </div>
+
+        <div class="d-grid mb-4">
+            <button  id="btnDoiTien"class="btn btn-danger fw-bold" type="button" >QUY ĐỔI TIỀN</button>
+        </div>
+
+        <table class="table table-bordered text-center fs-5">
+            <thead class="table-danger">
+                <tr>
+                    <th>Thông tin</th>
+                    <th>Số tiền nhận được</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-success fw-bold text-success">
+                    <td>Số tiền (VNĐ)</td>
+                    <td id="txtTienVND">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="container w-50 py-5">
+    <div class="card p-4 shadow rounded bg-light">
+        <h2 class="text-center mb-4 text-danger fw-bold">Bài 4: Tính Diện Tích & Chu Vi HCN</h2>
+
+        <div class="mb-3">
+            <label for="chieuDai" class="form-label fw-bold">Chiều dài</label>
+            <input id="chieuDai" type="number" step="any" class="form-control"  placeholder="Nhập chiều dài...">
+        </div>
+
+        <div class="mb-3">
+            <label for="chieuRong" class="form-label fw-bold">Chiều rộng</label>
+            <input id="chieuRong" type="number" step="any" class="form-control"  placeholder="Nhập chiều rộng...">
+        </div>
+
+        <div class="d-grid mb-4">
+            <button id="btnTinhHCN" class="btn btn-info text-white fw-bold" type="button" >TÍNH TOÁN</button>
+        </div>
+
+        <table class="table table-bordered text-center fs-5">
+            <thead class="table-info">
+                <tr>
+                    <th>Kết quả cần tìm</th>
+                    <th>Giá trị</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-success fw-bold text-success">
+                    <td>Diện tích</td>
+                    <td id="txtDienTich">0</td>
+                </tr>
+                <tr class="table-warning fw-bold text-warning">
+                    <td>Chu vi</td>
+                    <td id="txtChuVi">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="container w-50 py-5">
+    <div class="card p-4 shadow rounded bg-light">
+        <h2 class="text-center mb-4 text-danger fw-bold">Bài 5: Tính Tổng 2 Ký Số</h2>
+
+        <div class="mb-3">
+            <label for="soNhap" class="form-label fw-bold">Nhập vào một số có 2 chữ số</label>
+            <input id="soNhap" type="number" class="form-control"  placeholder="Ví dụ: 12, 44, 83...">
+        </div>
+
+        <div class="d-grid mb-4">
+           <button id="btnTinhKySo" class="btn btn-success fw-bold" type="button" >TÍNH TỔNG KÝ SỐ</button>
+        </div>
+
+        <table class="table table-bordered text-center fs-5">
+            <thead class="table-success">
+                <tr>
+                    <th>Thông tin tách số</th>
+                    <th>Kết quả</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-success fw-bold text-success">
+                    <td>Tổng 2 ký số là</td>
+                    <td id="txtTongKySo">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        
+    <script src="./js/tienluong.js"></script>
+    <script src="./js/trungbinh.js"></script>
+    <script src="./js/doitien.js"></script>
+    <script src="./js/dientichchuvi.js"></script>
+    <script src="./js/tongkiso.js"></script>
+</body>
+
+</html>
