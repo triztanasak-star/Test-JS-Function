@@ -13,30 +13,113 @@
 </head>
 
 <body>
+
     <div class="container w-50 py-5">
         <div class="card p-4 shadow rounded bg-light">
-            <h2 class="text-center mb-4 text-danger fw-bold">Bài 1: Tính Tiền Lương</h2>
+            <h2 class="text-center mb-4 text-primary fw-bold">Bài Tập: Quản Lý Tuyển Sinh</h2>
 
-            <div class="mb-3">
-                <label for="soNgayLam" class="form-label fw-bold">Số ngày làm việc</label>
-                <input id="soNgayLam" type="number" class="form-control"  placeholder="Nhập số ngày làm...">
+            <div class="row g-3 mb-3">
+                <div class="col-6">
+                    <label for="diemChuan" class="form-label fw-bold">Điểm chuẩn hội đồng</label>
+                    <input id="diemChuan" type="number" class="form-control" placeholder="Ví dụ: 25">
+                </div>
+                <div class="col-6">
+                    <label for="diemMon1" class="form-label fw-bold">Điểm môn thứ 1</label>
+                    <input id="diemMon1" type="number" class="form-control" placeholder="Nhập điểm">
+                </div>
+                <div class="col-6">
+                    <label for="diemMon2" class="form-label fw-bold">Điểm môn thứ 2</label>
+                    <input id="diemMon2" type="number" class="form-control" placeholder="Nhập điểm">
+                </div>
+                <div class="col-6">
+                    <label for="diemMon3" class="form-label fw-bold">Điểm môn thứ 3</label>
+                    <input id="diemMon3" type="number" class="form-control" placeholder="Nhập điểm">
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-6">
+                    <label for="khuVực" class="form-label fw-bold">Chọn Khu vực</label>
+                    <select id="khuVuc" class="form-select">
+                        <option value="X">Không thuộc KV ưu tiên (X)</option>
+                        <option value="A">Khu vực A</option>
+                        <option value="B">Khu vực B</option>
+                        <option value="C">Khu vực C</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="doiTuong" class="form-label fw-bold">Chọn Đối tượng</label>
+                    <select id="doiTuong" class="form-select">
+                        <option value="0">Không thuộc ĐT ưu tiên (0)</option>
+                        <option value="1">Đối tượng 1</option>
+                        <option value="2">Đối tượng 2</option>
+                        <option value="3">Đối tượng 3</option>
+                    </select>
+                </div>
             </div>
 
             <div class="d-grid mb-4">
-               <button id="btnTinhLuong" class="btn btn-primary fw-bold" type="button" >TÍNH TIỀN LƯƠNG</button>
+                <button id="btnXetTuyen" class="btn btn-primary text-white fw-bold" type="button">XÉT TUYỂN KẾT
+                    QUẢ</button>
+            </div>
+
+            <div id="txtKetQua" class="alert alert-success d-none text-center fw-bold fs-5 shadow-sm rounded">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container w-50 py-5">
+        <div class="card p-4 shadow rounded bg-light">
+            <h2 class="text-center mb-4 text-danger fw-bold">Bài Tập Nộp: Tính Tiền Điện</h2>
+
+            <div class="mb-3">
+                <label for="tenKH" class="form-label fw-bold">Họ và tên khách hàng</label>
+                <input id="tenKH" type="text" class="form-control" placeholder="Nhập tên khách hàng">
+            </div>
+
+            <div class="mb-3">
+                <label for="soDien" class="form-label fw-bold">Số điện tiêu thụ (Kw)</label>
+                <input id="soDien" type="number" class="form-control" placeholder="Nhập số Kw điện sử dụng">
+            </div>
+
+            <div class="d-grid mb-4">
+                <button id="btnTinhTienDien" class="btn btn-danger text-white fw-bold" type="button">TÍNH TIỀN
+                    ĐIỆN</button>
             </div>
 
             <table class="table table-bordered text-center fs-5">
-                <thead class="table-primary">
+                <thead class="table-info">
                     <tr>
-                        <th>Thông tin</th>
-                        <th>Số tiền (VNĐ)</th>
+                        <th colspan="2" id="txtTenKhachHang">Chi tiết hoá đơn tiền điện</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table-success fw-bold text-success">
-                        <td>Tổng tiền lương</td>
-                        <td id="txtTongLuong">0</td>
+                    <tr class="fw-bold text-secondary">
+                        <td>Bậc 1 (50kw đầu - 500đ/kw)</td>
+                        <td id="txtBac1">0đ</td>
+                    </tr>
+                    <tr class="fw-bold text-secondary">
+                        <td>Bậc 2 (50kw kế - 650đ/kw)</td>
+                        <td id="txtBac2">0đ</td>
+                    </tr>
+                    <tr class="fw-bold text-secondary">
+                        <td>Bậc 3 (100kw kế - 850đ/kw)</td>
+                        <td id="txtBac3">0đ</td>
+                    </tr>
+                    <tr class="fw-bold text-secondary">
+                        <td>Bậc 4 (150kw kế - 1.100đ/kw)</td>
+                        <td id="txtBac4">0đ</td>
+                    </tr>
+                    <tr class="fw-bold text-secondary">
+                        <td>Bậc 5 (Còn lại - 1.300đ/kw)</td>
+                        <td id="txtBac5">0đ</td>
+                    </tr>
+                    <tr class="table-danger fw-bold text-danger fs-4">
+                        <td>Tổng tiền điện phải trả</td>
+                        <td id="txtTongTienDien">0đ</td>
                     </tr>
                 </tbody>
             </table>
@@ -44,164 +127,90 @@
     </div>
 
 
-
-    <div class="container w-50 py-5">
+<div class="container w-50 py-5">
     <div class="card p-4 shadow rounded bg-light">
-        <h2 class="text-center mb-4 text-danger fw-bold">Bài 2: Tính Giá Trị Trung Bình</h2>
+        <h2 class="text-center mb-4 text-success fw-bold">Bài Tập: Tính Thuế Thu Nhập Cá Nhân</h2>
+
+        <div class="mb-3">
+            <label for="hoTen" class="form-label fw-bold">Họ và tên</label>
+            <input id="hoTen" type="text" class="form-control" placeholder="Nhập họ tên">
+        </div>
 
         <div class="row g-3 mb-4">
-            <div class="col-md-4">
-                <label for="num1" class="form-label fw-bold">Số thứ 1</label>
-                <input id="num1" type="number" step="any" class="form-control"  placeholder="Nhập số...">
+            <div class="col-6">
+                <label for="tongThuNhap" class="form-label fw-bold">Tổng thu nhập năm (VNĐ)</label>
+                <input id="tongThuNhap" type="number" class="form-control" placeholder="Ví dụ: 200000000">
             </div>
-            <div class="col-md-4">
-                <label for="num2" class="form-label fw-bold">Số thứ 2</label>
-                <input id="num2" type="number" step="any" class="form-control"  placeholder="Nhập số...">
-            </div>
-            <div class="col-md-4">
-                <label for="num3" class="form-label fw-bold">Số thứ 3</label>
-                <input id="num3"type="number" step="any" class="form-control"  placeholder="Nhập số...">
-            </div>
-            <div class="col-md-6">
-                <label for="num4" class="form-label fw-bold">Số thứ 4</label>
-                <input  id="num4"type="number" step="any" class="form-control"  placeholder="Nhập số...">
-            </div>
-            <div class="col-md-6">
-                <label for="num5" class="form-label fw-bold">Số thứ 5</label>
-                <input  id="num5" type="number" step="any" class="form-control"  placeholder="Nhập số...">
+            <div class="col-6">
+                <label for="soNguoiPhuThuoc" class="form-label fw-bold">Số người phụ thuộc</label>
+                <input id="soNguoiPhuThuoc" type="number" class="form-control" placeholder="Ví dụ: 2" value="0">
             </div>
         </div>
 
         <div class="d-grid mb-4">
-            <button  id="btnTinhTrungBinh" class="btn btn-warning text-white fw-bold" type="button">
-                TÍNH GIÁ TRỊ TRUNG BÌNH
-            </button>
+            <button id="btnTinhThue" class="btn btn-success text-white fw-bold" type="button">TÍNH TIỀN THUẾ</button>
         </div>
 
-        <table class="table table-bordered text-center fs-5">
-            <thead class="table-warning">
+        <div id="boxKetQua" class="alert alert-info d-none text-center fw-bold fs-5 shadow-sm rounded mb-3">
+            </div>
+
+        <table id="tableChiTiet" class="table table-bordered text-center fs-6 d-none">
+            <thead class="table-dark">
                 <tr>
-                    <th>Thông tin</th>
-                    <th>Kết quả</th>
+                    <th>Các bậc thuế lũy tiến</th>
+                    <th>Tiền thuế phải nộp</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="table-success fw-bold text-success">
-                    <td>Giá trị trung bình</td>
-                    <td id="txtTrungBinh">0</td>
-                </tr>
+                <tr><td>Bậc 1 (Đến 60tr - 5%)</td><td id="txtThueB1">0đ</td></tr>
+                <tr><td>Bậc 2 (Trên 60 đến 120tr - 10%)</td><td id="txtThueB2">0đ</td></tr>
+                <tr><td>Bậc 3 (Trên 120 đến 210tr - 15%)</td><td id="txtThueB3">0đ</td></tr>
+                <tr><td>Bậc 4 (Trên 210 đến 384tr - 20%)</td><td id="txtThueB4">0đ</td></tr>
+                <tr><td>Bậc 5 (Trên 384 đến 624tr - 25%)</td><td id="txtThueB5">0đ</td></tr>
+                <tr><td>Bậc 6 (Trên 624 đến 960tr - 30%)</td><td id="txtThueB6">0đ</td></tr>
+                <tr><td>Bậc 7 (Trên 960tr - 35%)</td><td id="txtThueB7">0đ</td></tr>
             </tbody>
         </table>
     </div>
 </div>
-
 
 
 <div class="container w-50 py-5">
     <div class="card p-4 shadow rounded bg-light">
-        <h2 class="text-center mb-4 text-danger fw-bold">Bài 3: Quy Đổi Tiền USD</h2>
-
-        <p class="text-center text-muted fw-semibold">Tỷ giá hiện tại: 1 USD = 23,500 VNĐ</p>
+        <h2 class="text-center mb-4 text-primary fw-bold">Bài Tập: Tính Tiền Cáp</h2>
 
         <div class="mb-3">
-            <label for="soTienUSD" class="form-label fw-bold">Số tiền USD muốn đổi</label>
-            <input id="soTienUSD" type="number" class="form-control"  placeholder="Nhập số tiền USD... (Ví dụ: 2)">
+            <label for="maKH" class="form-label fw-bold">Mã khách hàng</label>
+            <input id="maKH" type="text" class="form-control" placeholder="Ví dụ: KH-001">
+        </div>
+
+        <div class="mb-3">
+            <label for="loaiKH" class="form-label fw-bold">Loại khách hàng</label>
+            <select id="loaiKH" class="form-select">
+                <option value="nhanDan">Nhà dân</option>
+                <option value="doanhNghiep">Doanh nghiệp</option>
+            </select>
+        </div>
+
+        <div class="mb-3" id="groupKetNoi">
+            <label for="soKetNoi" class="form-label fw-bold text-muted">Số kết nối (Chỉ dành cho Doanh nghiệp)</label>
+            <input id="soKetNoi" type="number" class="form-control" placeholder="Nhập số kết nối" disabled value="0">
+        </div>
+
+        <div class="mb-4">
+            <label for="soKenh" class="form-label fw-bold">Số kênh cao cấp</label>
+            <input id="soKenh" type="number" class="form-control" placeholder="Nhập số kênh" value="0">
         </div>
 
         <div class="d-grid mb-4">
-            <button  id="btnDoiTien"class="btn btn-danger fw-bold" type="button" >QUY ĐỔI TIỀN</button>
+            <button id="btnTinhTienCap" class="btn btn-primary text-white fw-bold" type="button">TÍNH TIỀN CÁP</button>
         </div>
 
-        <table class="table table-bordered text-center fs-5">
-            <thead class="table-danger">
-                <tr>
-                    <th>Thông tin</th>
-                    <th>Số tiền nhận được</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="table-success fw-bold text-success">
-                    <td>Số tiền (VNĐ)</td>
-                    <td id="txtTienVND">0</td>
-                </tr>
-            </tbody>
-        </table>
+       <div id="txtKetQua1" class="alert alert-primary d-none text-center fw-bold fs-5 shadow-sm rounded">
+    Kết quả sẽ hiển thị tại đây!
+</div>
     </div>
 </div>
-
-
-
-<div class="container w-50 py-5">
-    <div class="card p-4 shadow rounded bg-light">
-        <h2 class="text-center mb-4 text-danger fw-bold">Bài 4: Tính Diện Tích & Chu Vi HCN</h2>
-
-        <div class="mb-3">
-            <label for="chieuDai" class="form-label fw-bold">Chiều dài</label>
-            <input id="chieuDai" type="number" step="any" class="form-control"  placeholder="Nhập chiều dài...">
-        </div>
-
-        <div class="mb-3">
-            <label for="chieuRong" class="form-label fw-bold">Chiều rộng</label>
-            <input id="chieuRong" type="number" step="any" class="form-control"  placeholder="Nhập chiều rộng...">
-        </div>
-
-        <div class="d-grid mb-4">
-            <button id="btnTinhHCN" class="btn btn-info text-white fw-bold" type="button" >TÍNH TOÁN</button>
-        </div>
-
-        <table class="table table-bordered text-center fs-5">
-            <thead class="table-info">
-                <tr>
-                    <th>Kết quả cần tìm</th>
-                    <th>Giá trị</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="table-success fw-bold text-success">
-                    <td>Diện tích</td>
-                    <td id="txtDienTich">0</td>
-                </tr>
-                <tr class="table-warning fw-bold text-warning">
-                    <td>Chu vi</td>
-                    <td id="txtChuVi">0</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
-<div class="container w-50 py-5">
-    <div class="card p-4 shadow rounded bg-light">
-        <h2 class="text-center mb-4 text-danger fw-bold">Bài 5: Tính Tổng 2 Ký Số</h2>
-
-        <div class="mb-3">
-            <label for="soNhap" class="form-label fw-bold">Nhập vào một số có 2 chữ số</label>
-            <input id="soNhap" type="number" class="form-control"  placeholder="Ví dụ: 12, 44, 83...">
-        </div>
-
-        <div class="d-grid mb-4">
-           <button id="btnTinhKySo" class="btn btn-success fw-bold" type="button" >TÍNH TỔNG KÝ SỐ</button>
-        </div>
-
-        <table class="table table-bordered text-center fs-5">
-            <thead class="table-success">
-                <tr>
-                    <th>Thông tin tách số</th>
-                    <th>Kết quả</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="table-success fw-bold text-success">
-                    <td>Tổng 2 ký số là</td>
-                    <td id="txtTongKySo">0</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
 
 
 
@@ -216,12 +225,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        
-    <script src="./js/tienluong.js"></script>
-    <script src="./js/trungbinh.js"></script>
-    <script src="./js/doitien.js"></script>
-    <script src="./js/dientichchuvi.js"></script>
-    <script src="./js/tongkiso.js"></script>
+
+
+    <!-- <script src="./js/dienbacthang.js"></script>
+    <script src="./js/tuyensinh.js"></script>
+    <script src="./js/thunhapcanhan.js"></script> -->
+     <script src="./js/tiencap.js"></script>
+
 </body>
 
 </html>
